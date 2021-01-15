@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 # Importing Flask class
 
 
@@ -20,7 +20,22 @@ that it knows where to look for templates and static files.
 # triggers the index function underneath and returns the
 # "Hello, World" text.
 def index():
-    return "Hello, World"
+    return render_template("index.html")
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
+@app.route("/careers")
+def careers():
+    return render_template("careers.html")
 
 
 if __name__ == "__main__":
